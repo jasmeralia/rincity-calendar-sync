@@ -1,4 +1,4 @@
 -r requirements.txt
-mypy>=1.11,<2
+mypy>=2.0.0,<3
 pylint>=3.3,<4
 ruff>=0.15.12,<1
