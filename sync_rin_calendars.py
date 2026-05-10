@@ -135,8 +135,10 @@ class MfcEvent:
 
     @property
     def color_id(self) -> str:
+        if self.kind == "no_stream":
+            return COLOR_RED
         if self.is_all_day:
-            return COLOR_RED if self.kind == "no_stream" else COLOR_PURPLE
+            return COLOR_PURPLE
         return COLOR_YELLOW if self.kind == "possible_stream" else COLOR_GREEN
 
     @property
