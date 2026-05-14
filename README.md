@@ -166,3 +166,22 @@ Individual targets:
 - `requirements-dev.txt`: runtime + developer tooling dependencies
 - `docker-compose.example.yml`: environment-variable deployment example
 - `Makefile`: local install and quality targets
+
+## Using a .env file
+
+Rather than embedding credentials in your `docker-compose.yml`, you can store them in a `.env` file and bind-mount it into the container:
+
+```bash
+cp .env.example .env
+# edit .env with your values
+```
+
+```yaml
+services:
+  app:
+    image: ghcr.io/jasmeralia/rincity-calendar-sync:latest
+    volumes:
+      - /path/to/your/.env:/app/.env:ro
+```
+
+The app loads `/app/.env` automatically on startup. Any value in `.env` can still be overridden by an explicit `environment:` entry in your Compose file.

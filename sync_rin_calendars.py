@@ -1,6 +1,9 @@
 #!/usr/bin/env python3
 from __future__ import annotations
 
+from dotenv import load_dotenv
+load_dotenv()
+
 import argparse
 import datetime as dt
 import html
