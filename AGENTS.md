@@ -30,6 +30,7 @@ This repo syncs RinCity's public MFC Share calendar into Google Calendar.
 
 - Never push commits directly to `master`. Always open a pull request from a feature/fix branch.
 - Use squash merge strategy when merging pull requests.
+- After merging any pull request, monitor the GitHub Actions workflow runs to confirm CI passes.
 
 ## Main Entry Points
 
