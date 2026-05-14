@@ -1,9 +1,5 @@
 #!/usr/bin/env python3
-# ruff: noqa: E402, I001
 from __future__ import annotations
-
-from dotenv import load_dotenv
-load_dotenv()
 
 import argparse
 import datetime as dt
@@ -22,10 +18,14 @@ from email.message import EmailMessage
 from pathlib import Path
 from zoneinfo import ZoneInfo
 
-from google.auth.transport.requests import Request
-from google.oauth2.credentials import Credentials
-from google_auth_oauthlib.flow import InstalledAppFlow
-from googleapiclient.discovery import build
+from dotenv import load_dotenv
+
+load_dotenv()
+
+from google.auth.transport.requests import Request  # noqa: E402
+from google.oauth2.credentials import Credentials  # noqa: E402
+from google_auth_oauthlib.flow import InstalledAppFlow  # noqa: E402
+from googleapiclient.discovery import build  # noqa: E402
 
 SCOPES = ["https://www.googleapis.com/auth/calendar"]
 DEFAULT_URL = "https://share.myfreecams.com/RinCity/calendar"
