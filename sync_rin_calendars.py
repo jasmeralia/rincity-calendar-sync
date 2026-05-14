@@ -19,15 +19,10 @@ from pathlib import Path
 from zoneinfo import ZoneInfo
 
 from dotenv import load_dotenv
-
-load_dotenv()
-
-# pylint: disable=wrong-import-position
-from google.auth.transport.requests import Request  # noqa: E402
-from google.oauth2.credentials import Credentials  # noqa: E402
-from google_auth_oauthlib.flow import InstalledAppFlow  # noqa: E402
-from googleapiclient.discovery import build  # noqa: E402
-# pylint: enable=wrong-import-position
+from google.auth.transport.requests import Request
+from google.oauth2.credentials import Credentials
+from google_auth_oauthlib.flow import InstalledAppFlow
+from googleapiclient.discovery import build
 
 SCOPES = ["https://www.googleapis.com/auth/calendar"]
 DEFAULT_URL = "https://share.myfreecams.com/RinCity/calendar"
@@ -1289,6 +1284,7 @@ def run_sync(args: argparse.Namespace) -> tuple[SyncSummary, list[MfcEvent]]:
 
 
 def main() -> int:
+    load_dotenv()
     sleep_interval_seconds = load_sleep_interval_seconds()
     args = parse_args()
     notification_config = load_notification_config()
