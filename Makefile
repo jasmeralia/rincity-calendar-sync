@@ -6,7 +6,7 @@ MYPY ?= $(PYTHON) -m mypy
 
 SOURCES = sync_rin_calendars.py
 
-.PHONY: venv install run dry-run lint style typecheck
+.PHONY: venv install run dry-run lint lint-fix style typecheck
 
 venv:
 	python3 -m venv .venv
@@ -20,6 +20,10 @@ run:
 
 dry-run:
 	$(PYTHON) sync_rin_calendars.py --dry-run
+
+lint-fix:
+	$(RUFF) check --fix $(SOURCES)
+	$(RUFF) format $(SOURCES)
 
 style:
 	$(RUFF) check $(SOURCES)

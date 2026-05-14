@@ -22,9 +22,14 @@ This repo syncs RinCity's public MFC Share calendar into Google Calendar.
 - Use `.venv` for local execution.
 - Install dependencies with `make install`.
 - `requirements.txt` is runtime-only; `requirements-dev.txt` includes lint/typecheck tools.
-- Run checks with `make lint`.
+- After any code change, run `make lint-fix && make lint` and resolve all issues before committing.
 - Prefer environment-variable support over hard-coded secrets.
 - Do not commit real OAuth secrets or live tokens.
+
+## Git Workflow
+
+- Never push commits directly to `master`. Always open a pull request from a feature/fix branch.
+- Use squash merge strategy when merging pull requests.
 
 ## Main Entry Points
 
